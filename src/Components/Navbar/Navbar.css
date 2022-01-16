@@ -1,0 +1,22 @@
+.navbar-container{
+    height:80px;
+    width: 100%;
+    background-color:red;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-container img{
+    height:70%;
+    margin-left: 40px;
+    cursor:pointer;
+}
+
+.navbar-container  input{
+    border: none;
+    width: 240px;
+    height:20px;
+    padding:5px;
+    outline: none;
+    margin-left: 100%;
+}
