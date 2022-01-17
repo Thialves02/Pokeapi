@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import PokeCard from '../PokeCard/PokeCard'
 import './EachPokemon.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 export default function EachPokemon({name}) {
     const [info,setInfo] = useState()
@@ -36,8 +38,8 @@ export default function EachPokemon({name}) {
         setInfo(body)
       }
       getInfo()
-    }, [])
-  
+    }, [info])
+    
     return (
       <>
       <div className='container-pokemons'>
@@ -47,16 +49,29 @@ export default function EachPokemon({name}) {
         {info != undefined &&
           <div className='each-container'>
             <img src={info.sprites.front_default}/>
-            <p>{info.id}</p>
-            {info.types.map((type) =>(
-              <p style={{backgroundColor:`#${TYPE_COLORS[type.type.name]}`,color:'white'}}>{type.type.name}</p>
-             ))}
+            <div className='icon'>
+              <FontAwesomeIcon icon={faStar}/>
+            </div>
+            <h1>{info.id}</h1>
+            <h2>{name}</h2>
+            <div className='types'>
+              {info.types.map((type) =>(
+                <div className='type' style={{backgroundColor:`#${TYPE_COLORS[type.type.name]}`,color:'white'}}>
+                  <p >{type.type.name}</p>
+                </div>
+              ))}
+            </div>
+            <div className='stats-container'>
             {info.stats.map((stat)=>(
-              <div>
-                <p>{stat.stat.name}</p>
-                <p>{stat.base_stat}</p>
-              </div>
+              <> 
+                <div className='stats'>
+                  <p>{stat.stat.name}</p>
+                  <p>{stat.base_stat}</p>
+                </div>
+                <span><div className='base-stat' style={{width:stat.base_stat * 2}}></div></span> 
+              </>
             ))}
+            </div>
           </div>
         }
       </div>
