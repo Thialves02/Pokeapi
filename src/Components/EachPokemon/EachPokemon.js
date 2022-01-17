@@ -7,6 +7,18 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 export default function EachPokemon({name}) {
     const [info,setInfo] = useState()
 
+    useEffect(() => {
+      const getInfo = async () =>{
+        const response = await fetch (
+          `https://pokeapi.co/api/v2/pokemon/${name}`
+        )
+        const body = await response.json();
+        
+        setInfo(body)
+      }
+      getInfo()
+    }, [/* info */])
+
     const TYPE_COLORS = {
       bug: 'B1C12E',
       dark: '4F3A2D',
@@ -27,18 +39,6 @@ export default function EachPokemon({name}) {
       steel: 'B5B5C3',
       water: '3295F6'
     };
-
-    useEffect(() => {
-      const getInfo = async () =>{
-        const response = await fetch (
-          `https://pokeapi.co/api/v2/pokemon/${name}`
-        )
-        const body = await response.json();
-        
-        setInfo(body)
-      }
-      getInfo()
-    }, [info])
     
     return (
       <>
@@ -47,7 +47,7 @@ export default function EachPokemon({name}) {
           <div>Loading</div>
         }
         {info != undefined &&
-          <div className='each-container'>
+          <div className='each-container'  style={{backgroundColor:`#${TYPE_COLORS[info.types[0].type.name]}`}}>
             <img src={info.sprites.front_default}/>
             <div className='icon'>
               <FontAwesomeIcon icon={faStar}/>
@@ -68,7 +68,7 @@ export default function EachPokemon({name}) {
                   <p>{stat.stat.name}</p>
                   <p>{stat.base_stat}</p>
                 </div>
-                <span><div className='base-stat' style={{width:stat.base_stat * 2}}></div></span> 
+                <span><div className='base-stat' style={{width:stat.base_stat * 2,maxWidth:'200px'}}></div></span> 
               </>
             ))}
             </div>
