@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import EachPokemon from '../Components/EachPokemon/EachPokemon'
+import { Context } from '../context/CtxApp';
 import './App.css';
 
 function App() {
-  const[data,setData] = useState([])
+  /* const[data,setData] = useState([]) */
+
+  const {data,setData} = useContext(Context)
 
   useEffect(() => {
     const getData = async () =>{
@@ -16,11 +19,17 @@ function App() {
     }
     getData()
   }, [])
-  
+
   return (
     <>
     <div className="home-container">
-    {data.map((data,index) =>(
+    {data.abilities != undefined && 
+        <EachPokemon
+        name={data.name}
+        />
+    }
+    {data.abilities == undefined &&
+    data.map((data,index) =>(
       <EachPokemon
       name={data.name}
       />
