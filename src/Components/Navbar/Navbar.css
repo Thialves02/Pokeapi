@@ -1,9 +1,13 @@
 .navbar-container{
+    position: fixed;
+    top: 0;
     height:80px;
     width: 100%;
     background-color:red;
     display: flex;
     align-items: center;
+    z-index: 99;
+    justify-content: space-between;
 }
 
 .navbar-container img{
@@ -12,11 +16,20 @@
     cursor:pointer;
 }
 
+.navbar-container .form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .navbar-container  input{
     border: none;
-    width: 240px;
+    width: 350px;
     height:20px;
     padding:5px;
     outline: none;
-    margin-left: 100%;
+}
+
+.navbar-container p{
+    margin-right: 50px;
 }
