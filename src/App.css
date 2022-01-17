@@ -2,4 +2,10 @@
     margin: 0;
     padding: 0;
     box-shadow: border-box;
+    font-family: Pokemon;
+}
+
+@font-face {
+    font-family: Pokemon;
+    src: url(./Assets//Font//Pokemon\ Solid.ttf);
 }
