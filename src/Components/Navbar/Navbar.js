@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import './Navbar.css'
 import logo from '../../Assets/Images/logo.png'
 import { Context } from '../../context/CtxApp'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 export default function Navbar() {
     const {data,setData} = useContext(Context)
@@ -34,13 +34,13 @@ export default function Navbar() {
     }
     return (
         <div className='navbar-container'>
-            <img src={logo}/>
+            <Link to='/'><img src={logo}/></Link>
             <div className='form'>
             <form onSubmit={search}>
                 <input type='text' placeholder='Pesquisar' name='searchPokemon'/>
             </form>
             </div>
-            <p>Meu time</p>
+            <Link to='/time'><p>Meu time</p></Link>
         </div>
     )
 }

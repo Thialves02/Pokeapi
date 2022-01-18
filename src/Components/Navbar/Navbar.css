@@ -11,9 +11,15 @@
 }
 
 .navbar-container img{
-    height:70%;
+    width:150px;
+    height:55px;
     margin-left: 40px;
     cursor:pointer;
+}
+
+.navbar-container a{
+    height:55px;
+    text-decoration: none;
 }
 
 .navbar-container .form{
@@ -30,6 +36,7 @@
     outline: none;
 }
 
-.navbar-container p{
+.navbar-container a p{
     margin-right: 50px;
+    color: rgb(255, 255, 255);
 }
