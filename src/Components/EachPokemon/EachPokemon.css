@@ -19,15 +19,24 @@
 .each-container:hover .icon{
     display: block;
 }
-.each-container .icon{
+
+.each-container .icon,
+.each-container .icon-fav{
     position: absolute;
     right: 20px;
     top: -7px;
     font-size:25px;
-    color: rgb(0, 0, 0);
     cursor: pointer;
-    display: none;
-    
+    display: none; 
+}
+
+.each-container .icon{
+    color: #000000;
+}
+
+.each-container .icon-fav{
+    color: #ebfb00;
+    display: block;
 }
 
 .each-container h1{
