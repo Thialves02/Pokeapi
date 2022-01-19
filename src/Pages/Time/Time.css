@@ -1,0 +1,38 @@
+.container-time {
+  margin-top: -50px;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-title {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.container-time img {
+  height: 350px;
+}
+
+.pokemons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  width: 1000px;
+}
+
+.pokemon {
+  height: 50%;
+}
+
+.pokemons img {
+  width: 80%;
+  height: 80%;
+  background-color: rgb(209, 7, 7);
+  margin: 25px;
+  border-radius: 10px;
+}
