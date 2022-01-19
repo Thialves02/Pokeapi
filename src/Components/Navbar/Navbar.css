@@ -1,42 +1,42 @@
-.navbar-container{
-    position: fixed;
-    top: 0;
-    height:80px;
-    width: 100%;
-    background-color:red;
-    display: flex;
-    align-items: center;
-    z-index: 99;
-    justify-content: space-between;
+.navbar-container {
+  position: fixed;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  z-index: 99;
+  justify-content: space-between;
 }
 
-.navbar-container img{
-    width:150px;
-    height:55px;
-    margin-left: 40px;
-    cursor:pointer;
+.navbar-container img {
+  width: 150px;
+  height: 55px;
+  margin-left: 40px;
+  cursor: pointer;
 }
 
-.navbar-container a{
-    height:55px;
-    text-decoration: none;
+.navbar-container a {
+  height: 55px;
+  text-decoration: none;
 }
 
-.navbar-container .form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.navbar-container .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.navbar-container  input{
-    border: none;
-    width: 350px;
-    height:20px;
-    padding:5px;
-    outline: none;
+.navbar-container input {
+  border: none;
+  width: 350px;
+  height: 20px;
+  padding: 5px;
+  outline: none;
 }
 
-.navbar-container a p{
-    margin-right: 50px;
-    color: rgb(255, 255, 255);
+.navbar-container a p {
+  margin-right: 50px;
+  color: rgb(255, 255, 255);
 }
