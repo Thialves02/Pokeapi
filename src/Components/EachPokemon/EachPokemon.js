@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import PokeCard from "../PokeCard/PokeCard";
 import "./EachPokemon.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
@@ -10,22 +9,15 @@ export default function EachPokemon({ name }) {
   const [click, setClick] = useState(false);
   const { BACKGROUND_COLORS } = useContext(Context);
 
-  useEffect(
-    () => {
-      const getInfo = async () => {
-        const response = await fetch(
-          `https://pokeapi.co/api/v2/pokemon/${name}`
-        );
-        const body = await response.json();
+  useEffect(() => {
+    const getInfo = async () => {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+      const body = await response.json();
 
-        setInfo(body);
-      };
-      getInfo();
-    },
-    [
-      /* info */
-    ]
-  );
+      setInfo(body);
+    };
+    getInfo();
+  }, [name]);
 
   const TYPE_COLORS = {
     bug: "B1C12E",
@@ -79,7 +71,7 @@ export default function EachPokemon({ name }) {
     <>
       <div className="container-pokemons">
         {info === undefined && <div>Loading</div>}
-        {info != undefined && (
+        {info !== undefined && (
           <div
             className="each-container"
             style={{
