@@ -1,11 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Time.css";
 import treinador from "../../Assets/Images/treinador.png";
 import { Context } from "../../context/CtxApp";
 
 export default function Time() {
+  const [favorites, setFavorites] = useState();
+
   const con = JSON.parse(localStorage.getItem("favorites"));
-  console.log(con);
+  const removePokemon = (index) => {
+    con.splice(index, 1);
+    localStorage.setItem("favorites", JSON.stringify(con));
+    setFavorites(con);
+  };
+  useEffect(() => {}, [con]);
+
   const { BACKGROUND_COLORS } = useContext(Context);
 
   return (
@@ -30,7 +38,7 @@ export default function Time() {
               )}
               {con.length !== 0 &&
                 con.map((favorite, index) => (
-                  <div className="pokemon">
+                  <div className="pokemon" onClick={() => removePokemon(index)}>
                     <img
                       src={favorite.sprites.front_default}
                       style={{
