@@ -28,6 +28,10 @@
   align-items: center;
 }
 
+.navbar-container .home {
+  display: none;
+}
+
 .navbar-container input {
   border: none;
   width: 350px;
@@ -39,4 +43,19 @@
 .navbar-container a p {
   margin-right: 50px;
   color: rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 800px) {
+  .navbar-container img {
+    display: none;
+  }
+  .navbar-container .home {
+    display: block;
+  }
+  .navbar-container input {
+    width: 150px;
+  }
+  .navbar-container a p {
+    margin-right: 20px;
+  }
 }

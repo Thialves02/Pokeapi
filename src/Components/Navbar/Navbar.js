@@ -12,6 +12,8 @@ export default function Navbar() {
     e.preventDefault();
 
     const searchPokemon = e.target.searchPokemon.value;
+    const formatedSearch = searchPokemon.toLowerCase();
+
     if (searchPokemon === "") {
       const response = await fetch(
         `https://pokeapi.co/api/v2/pokemon?limit=0&offset=0`
@@ -22,7 +24,7 @@ export default function Navbar() {
       setData(body.results);
     } else {
       const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${searchPokemon}`
+        `https://pokeapi.co/api/v2/pokemon/${formatedSearch}`
       );
       history.push("/");
       const body = await response.json();
@@ -39,6 +41,9 @@ export default function Navbar() {
           <input type="text" placeholder="Pesquisar" name="searchPokemon" />
         </form>
       </div>
+      <Link to="/" className="home">
+        <p>Home</p>
+      </Link>
       <Link to="/time">
         <p>Meu time</p>
       </Link>
