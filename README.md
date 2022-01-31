@@ -18,8 +18,8 @@ Aplicação desenvolvida com ReactJS
 # Demo 📸
 
 <div align="center" >
-  <img src="./src/assets/github/home.png" alt="demo-web" height="425">
-  <img src="./src/assets/github/mobile.png" alt="demo-mobile" height="425">
+  <img src="./src/Assets/github/home.png" alt="demo-web" height="425">
+  <img src="./src/Assets/github/mobile.png" alt="demo-mobile" height="425">
 </div>
 
 # Pré-requisitos
